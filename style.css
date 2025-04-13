@@ -1,0 +1,65 @@
+body {
+    background-image: url('back_halftransparent.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: #838383;
+    overflow-x: hidden;
+}
+
+.overlay {
+    position: fixed;
+    top: 19%;
+    left: 17.8%;
+    width: 50vw;
+    height: 50vh;
+    background-image: url('animatedoverlay.png');
+    background-size: contain; /* Mantém proporção sem cortar */
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Ajustes para diferentes tamanhos de tela */
+@media (min-width: 1920px) {
+    .overlay {
+        top: 25%; /* Ajuste fino para telas grandes */
+        left: 20%; /* Ajuste fino para telas grandes */
+    }
+}
+
+@media (max-width: 1366px) {
+    .overlay {
+        top: 19%; /* Ajuste fino para telas menores */
+        left: 17.8%; /* Ajuste fino para telas menores */
+    }
+
+.contact-image {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.contact-image img {
+    width: auto;
+    height: auto;
+    max-height: 200px;
+}
+
+.contact-image a {
+    display: block;
+    color: #838383;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.contact-image a:hover {
+    text-decoration: underline;
+}
