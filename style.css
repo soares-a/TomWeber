@@ -1,69 +1,61 @@
+/* ======= BASE ======= */
+/* ======= Ajustes em body (sem imagem de fundo mais) ======= */
 body {
-    background-image: url('back_halftransparent.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    position: relative;
     color: #838383;
     overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('back_halftransparent.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+/* ======= OVERLAY ======= */
 .overlay {
     position: fixed;
-    top: 19%;
-    left: 20%;
+    top: 44%;
+    left: 42.8%;
+    transform: translate(-50%, -50%);
     width: 50vw;
     height: 50vh;
-    background-image: url('animatedoverlay.png');
-    background-size: contain; /* Mantém proporção sem cortar */
-    background-position: center center;
-    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 2;
     pointer-events: none;
 }
 
-/* Ajustes para diferentes tamanhos de tela */
-@media (min-width: 1920px) {
-    .overlay {
-        top: 25%; /* Ajuste fino para telas grandes */
-        left: 20%; /* Ajuste fino para telas grandes */
-    }
+.overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 100% center; /* Ajuste aqui o foco visual */
 }
 
-@media (max-width: 1366px) {
-    .overlay {
-        top: 19%; /* Ajuste fino para telas menores */
-        left: 17.8%; /* Ajuste fino para telas menores */
-    }
 
+/* ======= RODAPÉ ======= */
 .contact-image {
     position: fixed;
     left: 0;
     bottom: 0;
     z-index: 1000;
-}
-/* Otimização para smartphones (largura até 768px) */
-@media (max-width: 768px) {
-    body {
-        background-size: contain; /* Ajusta para caber inteiro em telas menores */
-        background-attachment: scroll; /* Remove fixed para melhor rolagem em mobile */
-    }
-    .overlay {
-        top: 10%; /* Ajuste para telas menores */
-        left: 10%; /* Ajuste para telas menores */
-        width: 80vw; /* Aumenta o tamanho relativo */
-        height: 40vh; /* Reduz a altura para melhor proporção */
-    }
-}
-
-.contact-image img {
-    width: auto;
-    height: auto;
-    max-height: 200px;
 }
 
 .contact-image a {
@@ -76,3 +68,4 @@ body {
 .contact-image a:hover {
     text-decoration: underline;
 }
+
